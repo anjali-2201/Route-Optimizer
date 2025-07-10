@@ -45,12 +45,50 @@ Adjust the traffic slider (1-10) and click "Simulate Traffic" to dynamically upd
 
 ```mermaid
 graph LR
-    A1 -->|2| S1
+
+    %% Ambulance Stations
+    A1 -->|3| I1
     A1 -->|4| I5
+    A1 -->|2| S1
+
     A2 -->|3| I2
     A2 -->|5| I6
     A2 -->|6| H3
+
+    %% Intersections
+    I1 -->|4| I2
+    I1 -->|5| I3
+    I1 -->|3| I5
+    I1 -->|2| I6
+
+    I2 -->|3| I4
+    I2 -->|4| I6
+    I2 -->|2| H1
+
+    I3 -->|4| I4
+    I3 -->|6| I5
+    I3 -->|3| H2
+    I3 -->|4| S2
+
+    I4 -->|3| I6
+    I4 -->|4| H1
+    I4 -->|2| H3
+
+    I5 -->|5| I6
+    I5 -->|3| S1
+
+    I6 -->|2| H2
+    I6 -->|3| H3
+
+    %% Hospitals
     H1 -->|6| H2
+    H1 -->|5| H3
+
+    H2 -->|4| H3
+    H2 -->|3| S2
+
+    %% Schools
+    S1 -->|7| S2
 ```
 
 ## 📂 Project Structure
